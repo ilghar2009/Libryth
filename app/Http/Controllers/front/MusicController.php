@@ -36,16 +36,14 @@ class MusicController extends Controller
 
     public function edit(Music $music)
     {
-        $songs = $music->map(function($item){
-            return [
-                'id' => $item->id,
-                'title' => $item->title,
-                'description' => $item->description,
-                'text' => $item->text,
-                'music' => $item->music,
-                'user' => $item->user,
+        $songs = [
+                'id' => $music->id,
+                'title' => $music->title,
+                'description' => $music->description,
+                'text' => $music->text,
+                'music' => $music->music,
+                'user' => $music->user,
             ];
-        });
 
         return response()->json(['songs' => $songs]);
     }
