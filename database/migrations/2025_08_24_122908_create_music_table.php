@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('user_id');
             $table->string('title');
             $table->string('description');
-            $table->string('music_src')->nullable();
+            $table->string('music')->nullable();
             $table->longText('text')->nullable();
             // checking, confirmation, denial
             $table->string('role')->default('check');

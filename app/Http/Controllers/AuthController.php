@@ -50,6 +50,7 @@ class AuthController extends Controller
             return response()->json([
                'message' => 'Unauthorized'
             ], 401);
+
         }else {
             return response()->json([
                 'token' => $token,

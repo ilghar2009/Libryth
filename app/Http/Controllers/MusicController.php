@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Music;
 use Illuminate\Http\Request;
 
 class MusicController extends Controller
@@ -34,7 +33,7 @@ class MusicController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Music $music)
+    public function show(string $id)
     {
         //
     }
@@ -42,7 +41,7 @@ class MusicController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Music $music)
+    public function edit(string $id)
     {
         //
     }
@@ -50,7 +49,7 @@ class MusicController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Music $music)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -58,7 +57,7 @@ class MusicController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Music $music)
+    public function destroy(string $id)
     {
         //
     }

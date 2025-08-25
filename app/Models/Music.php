@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Str;
 
 class Music extends Model
@@ -17,7 +18,7 @@ class Music extends Model
       'title',
       'description',
       'text',
-      'music_src',
+      'music',
       'role',
     ];
 
@@ -27,4 +28,10 @@ class Music extends Model
            $model->id = (string)Str::uuid();
         });
     }
+
+    public function user():BelongsTo
+    {
+        return $this->belongsTo(User::class,'user_id','id');
+    }
+
 }
