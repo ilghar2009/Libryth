@@ -16,7 +16,7 @@ class MusicController extends Controller
                 'title' => 'required',
                 'description' => 'required',
                 'text' => 'required_with:music',
-                'music' => 'required_with:tex|mimes:mp3,wav,aac,ogg|max:10240',//max 10MB
+                'music' => 'required_with:text|mimes:mp3,wav,aac,ogg|max:10240',//max 10MB
             ]);
 
         //upload music if is set
