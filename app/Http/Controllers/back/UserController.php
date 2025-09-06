@@ -28,8 +28,15 @@ class UserController extends Controller
         return response()->json($artist);
     }
 
+    // This function toggles the user role (admin <-> user) and returns it
     public function update(User $user){
-        $user->update(['role' => !$user->role]);
+        $role = $user->is_admin? 0 : 1;
+        $user->update(['is_admin' => $role]);
+        return true;
+    }
+
+    public function destroy(User $user){
+        $user->delete();
         return true;
     }
 }
