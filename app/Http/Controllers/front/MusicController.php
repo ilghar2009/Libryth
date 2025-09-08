@@ -28,7 +28,7 @@ class MusicController extends Controller
                'description' => $values['description'],
                'text' => $values['text'],
                'music' => $path,
-               'user_id' => auth()->user()-> id,
+               'user_id' => auth()->user()->id,
             ]);
 
         return True;
@@ -36,16 +36,7 @@ class MusicController extends Controller
 
     public function edit(Music $music)
     {
-        $songs = [
-                'id' => $music->id,
-                'title' => $music->title,
-                'description' => $music->description,
-                'text' => $music->text,
-                'music' => $music->music,
-                'user' => $music->user,
-            ];
-
-        return response()->json(['songs' => $songs]);
+        return response()->json(['songs' => $music]);
     }
 
     public function update(Request $request, Music $music)

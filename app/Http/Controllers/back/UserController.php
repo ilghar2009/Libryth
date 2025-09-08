@@ -20,7 +20,6 @@ class UserController extends Controller
                     'id' => $item->id,
                     'title' => $item->title,
                     'text' => $item->text,
-                    'music' => $item->music,
                     'role'=> $item->role,
                 ];
         });
