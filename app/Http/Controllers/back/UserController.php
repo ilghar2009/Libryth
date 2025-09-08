@@ -4,6 +4,7 @@ namespace App\Http\Controllers\back;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -13,24 +14,15 @@ class UserController extends Controller
     }
 
     public function show(User $user){
-
-        $artist = $user->map(function ($item){
-            return
-                [
-                    'id' => $item->id,
-                    'title' => $item->title,
-                    'text' => $item->text,
-                    'role'=> $item->role,
-                ];
-        });
-
-        return response()->json($artist);
+        return response()->json($user);
     }
 
-    // This function toggles the user role (admin <-> user) and returns it
-    public function update(User $user){
-        $role = $user->is_admin? 0 : 1;
-        $user->update(['is_admin' => $role]);
+    public function update(Request $request,User $user){
+
+        $user->update(
+            ['is_admin' => $request->is_admin]
+        );
+
         return true;
     }
 
